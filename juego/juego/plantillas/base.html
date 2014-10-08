@@ -42,14 +42,15 @@
 	 				<span class="icon-bar"></span> 
 	 				<span class="icon-bar"></span> 
 	 			 </button> 
-	 			  <a class="brand" href="#">TriviaOnline.bo</a>
+	 			  <a class="brand" href="home">TriviaOnline.bo</a>
+	 			   {{fecha}} 
+			 	   {%block container%}
 
 			 	    <div class="nav-collapse collapse"> 
-			 	      
-			          	<ul class="nav">
-			          	<!-- <img class="img-polaroid" src="{{STATIC_URL}}img/images.jpg" alt="">-->
-			          	{%block container%}
-			 				<li class="#active"><a href="registro">REGISTRARSE</a></li>
+			 	    
+			          	<ul class="nav"> 
+			          	
+			 				<li class="#active"><a href="registrar">Registrar Usuario</a></li>
 			 				<!--<li><a href="#">About</a></li> 
 			 				<li>
 			 				<a href="#">Contactos</a>
@@ -70,11 +71,8 @@
 			 			 
                        
  			 	    </div><!--/.nav-collapse--> 
-					<form class="navbar-form "> 
-						<input class="span2" type="text" placeholder="usuario"> 
-						<input class="span2" type="password" placeholder="Password"> 
-						<button type="submit" class="btn">Entrar</button> 
-					</form>   
+
+					<li class="#active"><a href="/ingresar">Ingresa</a></li>
 	 		 </div> 
 	 	 </div> 
 	  </div> 
@@ -84,21 +82,20 @@
 		 
 		 
 		 	 <!-- Main hero unit for a primary marketing message or call to action --> 
-			<div class="hero-unit">
+				<div class="hero-unit">
 				
  
-				 <h1>B I E N V E N I D O S</h1>
-				 
+				 <h1>BienVenidos</h1>
+				
 					
-				<img class="img-polaroid" src="{{STATIC_URL}}img/entrada.gif" alt="">
- 
-					<!-- <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>-->
+					<img class="img-polaroid" src="{{STATIC_URL}}img/entrada.gif" alt="">
+					 <!--<p><a href="#" class="btn btn-primary btn-large">ingresar &raquo;</a></p>-->
 
 				 
 
 				
 			  
-			</div> 
+				</div> 
 				
 		{%endblock %}
 			
@@ -157,12 +154,12 @@
 		    
 		 
 		 
-		    	<footer> 
+		    	
+	</div> <!-- /container --> 
+	 
+                <footer> 
 		 			 <p>&copy; Company 2014</p> 
 		 		</footer> 
-	</div> <!-- /container --> 
-		 
- 
  <!-- Le javascript 
  ================================================== --> 
  <!-- Placed at the end of the document so the pages load faster --> 
@@ -181,5 +178,6 @@
  <script src="../assets/js/bootstrap-typeahead.js"></script>--> 
  
  
-   </body> 
+   </body>  
+  {{fecha}}	
 </html> 
