@@ -20,6 +20,7 @@ urlpatterns = patterns('',
     url(r'^lista/$',listar),
     url(r'^modificar/$',modificar_view),
     url(r'^npass/$',modificar_pass),
+    url(r'^perfil/view/(\d+)/$',ver_perfil, name='ver_perfil_user'),
 
 
     url(r'^tema/$',registro_tema, name='Tema'),
@@ -28,6 +29,13 @@ urlpatterns = patterns('',
     url(r'^pregunta/edit/(\d+)/$',edit_pregunta, name='edit_pregunta'),
     url(r'^pregunta/eliminar/(\d+)/$',eliminar_pregunta, name='eliminar_pregunta'),
     #url(r'^agregar/',agregar, name='agregar_pregunta'),
+
+    #================================
+
+    url(r'^chat/$',chat, name='coneccion'),
+
+
+
 )
 
 #http://localhost:8000/

@@ -13,7 +13,10 @@
 	 <style type="text/css"> 
 	 body { padding-top: 60px; padding-bottom: 40px;} 
 	 </style> 
+	 
 	 <link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet">
+	 <!--<link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">-->
+	 <link href="{{ STATIC_URL }}style1.css" rel="stylesheet">
 	 
 	 
 	 <!-- HTML5 shim, for IE6-8 support of HTML5 elements --> 
@@ -41,8 +44,11 @@
 	 				<span class="icon-bar"></span> 
 	 				<span class="icon-bar"></span> 
 	 				<span class="icon-bar"></span> 
-	 			 </button> 
-	 			  <a class="brand" href="/">TriviaOnline.bo</a>
+	 			 </button>
+	 			
+				<h1><a href="/"><span>Trivia</span></a></h1>
+				
+	 			  <h6><a class="brand" href="/"><span>TriviaOnline.bo</span></a></h6>
 	 			 
 			 	    <div class="nav-collapse collapse"> 
 			 	    
@@ -55,8 +61,9 @@
 			 				</li>-->
 			 				<li class="#active"><a href="/ingresar">Ingresar</a></li>
 			 				<!--<li class="#active"><a href="lista">Lista</a></li>--> 
+				 			{% if user.is_superuser %}
 				 			<li class="dropdown">
-						          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <span class="caret"></span></a>
+						          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<span class="caret"></span></a>
 						          <ul class="dropdown-menu" role="menu">
 						            <li><a href="lista">Lista de Usuarios</a></li>
 						            <li><a href="tema">Registar Temas</a></li>
@@ -67,6 +74,8 @@
 						            <li><a href="#">One more separated link</a></li>
 						          </ul>
 						    </li>
+
+						    {% endif %}
 			 		     	
 			 			 </ul>
 			 			 
@@ -76,9 +85,41 @@
 					
 	 		 </div> 
 	 	 </div> 
-	  </div> 
-	 
- 
+	  </div>
+<!--<div class="navbar navbar-inverse navbar-fixed-top"> 
+ <div class="navbar-inner"> 
+	<div class="container">
+	<div class="row">
+		<div class="col-xs-3">
+			<h1><a href="/"><span>Logotipo</span></a></h1>
+		</div>
+		<div class="col-xs-9">
+			<ul class="nav nav-pills">
+			  <li class="active"><a href="/">Inicio</a></li>
+			  <li><a href="/user/registro/">Registro</a></li>
+			  {% if user.is_authenticated %}
+					<li><a href="/logout/">Salir</a></li>
+			  {% else %}
+			  		<li><a href="/login/">Login</a></li>
+			  {% endif %}
+				<li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+		          <ul class="dropdown-menu" role="menu">
+		            <li><a href="#">Action</a></li>
+		            <li><a href="#">Another action</a></li>
+		            <li><a href="#">Something else here</a></li>
+		            <li class="divider"></li>
+		            <li><a href="#">Separated link</a></li>
+		            <li class="divider"></li>
+		            <li><a href="#">One more separated link</a></li>
+		          </ul>
+		        </li>
+			</ul>
+		</div>
+	</div>
+	</div>
+ </div>
+</div>-->
 	<div class="container"> 
 	  
 		 
@@ -92,17 +133,102 @@
 					<!--<img class="img-polaroid" src="{{STATIC_URL}}img/entrada.gif" alt="">
 					 <!--<p><a href="#" class="btn btn-primary btn-large">ingresar &raquo;</a></p>-->
 
-				 
+				 </div> 
+			
+
+      <!--  Carousel -->
+      <!--  consult Bootstrap docs at 
+            http://twitter.github.com/bootstrap/javascript.html#carousel -->
+      <div id="this-carousel-id" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="item active">
+            <a href="">  <img src="{{STATIC_URL}}images/trivial_pursuit-628778.jpg" />
+            </a>
+            <div class="carousel-caption">
+              <p>trivial1</p>
+              <p><a href=""></a>A</p>
+            </div>
+          </div>
+          <div class="item">
+            <a href="">
+              <a href="">  <img src="{{STATIC_URL}}images/desafio-trivial-2.jpg" />
+            </a>
+            <div class="carousel-caption">
+              <p>Trivial24</p>
+              <p><a href=""></a>B</p>
+            </div>
+          </div>
+          <div class="item">
+            <a href="">
+              <a href="">  <img src="{{STATIC_URL}}images/FC-Barcelona-Trivia-Fans.jpg" />
+            </a>
+            <div class="carousel-caption">
+              <p>Trivial2</p>
+              <p><a href=""></a></p>
+            </div>
+          </div>
+          <div class="item">
+            <a href="">
+              <a href="">  <img src="{{STATIC_URL}}images/barça-header-664x374.jpg" />
+            </a>
+            <div class="carousel-caption">
+              <p>Trivial2</p>
+              <p><a href=""></a></p>
+            </div>
+          </div>
+          <div class="item">
+            <a href="">
+              <a href="">  <img src="{{STATIC_URL}}images/Trivia_ClubAmerica-2.jpg" />
+            </a>
+            <div class="carousel-caption">
+              <p>trivial42</p>
+              <p><a href=""></a></p>
+            </div>
+          </div>
+        </div><!-- .carousel-inner -->
+        <!--  next and previous controls here
+              href values must reference the id for this carousel -->
+          <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+      </div><!-- .carousel -->
+      <!-- end carousel -->
+
+      <!-- Example row of columns -->
+      
+ 
+
+     
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+    
+   
+
+ 
+				
+					
+					<!--<img class="img-circle " src="{{STATIC_URL}}img/pyramid4.jpg" alt="">-->
+ 
+					 <!--<p><a href="#" class="btn btn-primary btn-large">ingresar &raquo;</a></p>-->
+
+					
+			
+		 
 
 				
 			  
-				</div> 
+
+    
+   
+				
+			  
 				
 		
 			
 		 
 		 <!-- Example row of columns --> 
-			    <div class="row"> 
+			    <!--<div class="row"> 
 				    <div class="span4"> 
 					  <h2>JUEGOS</h2>
 					  <img class="img-polaroid" src="{{STATIC_URL}}img/entrada.gif" alt="">
@@ -163,9 +289,20 @@
 		 		</footer> 
  <!-- Le javascript 
  ================================================== --> 
+ 
  <!-- Placed at the end of the document so the pages load faster --> 
- <script src="{{ STATIC_URL }}js/bootstrap.js"></script>
+ <!--<script src="{{ STATIC_URL }}js/bootstrap.js"></script>-->
  <script src="{{ STATIC_URL }}js/jquery-1.11.1.min.js"></script>
+ <script>window.jQuery || document.write('<script src="{{STATIC_URL}}juego/bootstrap/js/jquery-1.7.2.min.js"><\/script>')</script>
+    <!-- Bootstrap jQuery plugins compiled and minified -->
+    <!--<script src="{{STATIC_URL}}juego/bootstrap/js/bootstrap.min.js"></script>-->
+    <script>
+      $(document).ready(function(){
+        $('.carousel').carousel({
+          interval: 4000
+        });
+      });
+    </script>
  <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script> 
  <!--<script src="../assets/js/bootstrap-alert.js"></script> 
  <script src="../assets/js/bootstrap-modal.js"></script> 

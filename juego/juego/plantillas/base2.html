@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Slave to the Game</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+<!--<link href="{{ STATIC_URL }}css/style.css" rel="stylesheet" >-->
+<link rel="stylesheet" href="{{ STATIC_URL }}style.css" type="text/css" media="screen" />
+</head>
+<body>
+<div id="body_wrapper">
+  <div id="rightcolumn">
+    <!-- Start Page Header -->
+    <div id="page_header">
+      <h1><span></span></h1>
+      <h3><span></span></h3>
+    </div>
+    <!-- End of Page Header -->
+    <!-- Start of Main Navigation Menu -->
+    <div id="mainnav">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/ingresar">ingresar</a></li>
+        <li><a href="/regisusuario">Registro</a></li>
+        <li><a href="/ingresar">Ver</a></li>
+      </ul>
+      <div class="clearthis">&nbsp;</div>
+    </div>
+    <!-- End of Main Navigation Menu -->
+    <!-- Start of Center Column -->
+   {%block container%}
+    <div id="centercolumn">
+      <div id="centercolumn_2">
+        <!-- Start of News Box 1 -->
+       
+        <!-- End of News Box 1 -->
+        <!-- Start of News Box 2 -->
+        <!--<div class="newsbox">
+          <div class="newsbox_header">
+            <!-- News Title --
+            <h2>Nvidia Forceware 81.87 Beta Released</h2>
+            <!-- News Date --
+            <strong>10/27/2005</strong>
+            <div class="clearthis">&nbsp;</div>
+          </div>
+          <div class="newsbox_content">
+            <!-- News Text --
+            <p> Posted By: Drew </p>
+            <p> Nvidia have released their latest "unofficial official" graphics drivers - the 81.87 Beta Forceware. The main difference between these and the recent 81.85 drivers is the addition of optimizations/compatibility fixes for Call of Duty 2. <br />
+              <br />
+              http://www.nzone.com/object/nzone_downloads_winxp_2k_32bit_81.87.html </p>
+          </div>
+        </div>
+        <!-- End of News Box 2 -->
+        <!-- Start of News Box 3 -->
+        
+        <!-- End of News Box 3 -->
+        <!-- Start of News Box 4 -->
+        
+        <!-- End of News Box 4 -->
+        <!-- Start of News Box 5 -->
+       
+        <!-- End of News Box 5 -->
+      </div>
+    </div>
+   
+    <!-- End of Center Column -->
+    <!-- Start of Right Sidebar -->
+    <div id="rightsidebar">
+      <!-- Start of Team Roster -->
+      <div id="teamroster">
+        <div id="teamroster_header">
+          <h2><span>Team Roster</span></h2>
+        </div>
+        <div id="teamroster_content">
+          <div id="teamroster_categories"> <a href="http://all-free-download.com/free-website-templates/">Staff</a> | <a href="http://all-free-download.com/free-website-templates/">Captains</a> </div>
+          <ul>
+            <li id="roster_twitch"><a href="http://all-free-download.com/free-website-templates/">twitch</a></li>
+            <li id="roster_rock"><a href="http://all-free-download.com/free-website-templates/">rock</a></li>
+            <li id="roster_badkarma"><a href="http://all-free-download.com/free-website-templates/">BadKarma</a></li>
+            <li id="roster_mostly"><a href="http://all-free-download.com/free-website-templates/">mostly</a></li>
+            <li id="roster_thebowl"><a href="http://all-free-download.com/free-website-templates/">TheBowl</a></li>
+            <li id="roster_doggerz"><a href="http://all-free-download.com/free-website-templates/">doggerz</a></li>
+            <li id="roster_drew"><a href="http://all-free-download.com/free-website-templates/">Drew</a></li>
+            <li id="roster_nogusta"><a href="http://all-free-download.com/free-website-templates/">Nogusta</a></li>
+          </ul>
+          <div class="clearthis">&nbsp;</div>
+          <div class="more_button"> <a href="http://all-free-download.com/free-website-templates/"><span>More</span></a> </div>
+        </div>
+      </div>
+
+      <!-- End of Team Roster -->
+      <!-- Start of Team Sponsors -->
+      <div id="teamsponsors">
+        <h2><span>Team Sponsors</span></h2>
+        <div id="teamsponsors_content"> <a href="http://all-free-download.com/free-website-templates/"><img src="static/images/teamsponsors_surrealmedia.jpg" width="186" height="63" alt="Surreal Media" /></a>
+          <div class="more_button"> <a href="http://all-free-download.com/free-website-templates/"><span>More</span></a> </div>
+        </div>
+      </div>
+      <!-- End of Team Sponsors -->
+    </div>
+    {% endblock%}
+    <!-- End of Right Sidebar -->
+    <div class="clearthis">&nbsp;</div>
+  </div>
+  <!-- Start of Left Column -->
+  <div id="leftcolumn">
+    <!-- Start of Recent Record -->
+    <div id="recentrecord">
+      <h2><span>Recent Record</span></h2>
+      <ul>
+        <li>TWL : 105 - 43 - 6</li>
+        <li>OGL : 101 - 35 - 16</li>
+        <li>TWL : 105 - 43 - 6</li>
+      </ul>
+      <div class="clearthis">&nbsp;</div>
+    </div>
+    <!-- End of Recent Record -->
+    <!-- Start of Left Sidebar -->
+    <div id="leftsidebar">
+      <!-- Start of Latest Matches -->
+      <div id="">
+                  <!-- {% if estado %}
+              <article id="rigth">
+                       <div class="contenedor">
+                       <h2>Bienvenido(a)!!! : {{ usuario.username }}</h2>
+                       <h2>Pais : {{ usuario.perfil.pais }}</h3>
+                           <h2>Email :{{ usuario.email }}</h3>
+                            <img src="{{usuario.perfil.avatar.url_200x200}}" alt="avatar">
+                           </div>
+                           <div>
+                           <a href="/lista/">Volver atras</a>
+                           </div>
+              </article>
+            {% else %}
+            <article id="rigth">
+                       <div class="contenedor">
+                            <h2>Lista de usuario</h2>
+                          
+                                {% for i in usuarios %}
+                                    <h3><li><a href="/perfil/view/{{i.id}}/"><img src="{{i.perfil.avatar.url_50x50}}" alt="avatar">{{ i.username }}</a> </li></h3>
+                                {% endfor %}
+                         
+                           </div>
+                           
+            </article>
+            {% endif %} -->
+      <!--<h2>Lista de Usuarios</h2>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li>s2tg&#62;Dark|</li>
+          <li>s2tg&#62;[#tS]</li>
+          <li>s2tg&#62;WFC</li>
+          <li>s2tg&#62;sinister</li>
+          <li>s2tg&#62;|CoL|</li>
+          <li>s2tg&#60;=3rd=</li>
+          <li>s2tg&#60;|AAA|</li>
+          <li>s2tg&#62;=[R.E.C]=</li>
+          <li>s2tg&#60;|CBW|</li>
+          <li>s2tg&#62;witw </li>
+        </ul>
+        <div class="more_button"> <a href="http://all-free-download.com/free-website-templates/"><span>More</span></a> </div>
+        <div class="clearthis">&nbsp;</div>-->
+      </div>
+      <!-- End of Latest Matches -->
+      <!-- Start of Gaming Services -->
+      <div id="">
+        <h2>Titulo </h2>
+        <ul>
+          <li>CoD:UO 205.234.150.42:28960</li>
+          <li>CoD:UO 205.234.150.42:28961</li>
+          <li>Teamspeak 66.225.194.130:7900</li>
+        </ul>
+        <div class="more_button"> <a href="http://all-free-download.com/free-website-templates/"><span>More</span></a> </div>
+        <div class="clearthis">&nbsp;</div>
+      </div>
+      <!-- End of Gaming Services -->
+      <!-- Start of Quick Links -->
+      <div id="quicklinks">
+        <h2><span>Quick Links</span></h2>
+        <ul>
+          <li><a href="http://all-free-download.com/free-website-templates/">TeamWarfare League</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">OGL Online Gaming League</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">F.E.A.R Portal</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">GotFrag</a></li>
+        </ul>
+        <div class="more_button"> <a href="http://all-free-download.com/free-website-templates/"><span>More</span></a> </div>
+        <div class="clearthis">&nbsp;</div>
+      </div>
+      <!-- End of Quick Links -->
+    </div>
+    <!-- End of Left Sidebar -->
+  </div>
+  <!-- End of Left Column -->
+  <div class="clearthis">&nbsp;</div>
+  <!-- Start of Page Footer -->
+  <div id="page_footer"> <small>&copy; Company 2014 <a href="http://www.freewebsitetemplates.com"></a></small> </div>
+</div>
+<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div>
+</body>
+</html>

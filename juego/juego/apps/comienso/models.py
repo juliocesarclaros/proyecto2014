@@ -14,9 +14,10 @@ class usuario(models.Model):
 		return "%s "%(self.Nick)
 class Perfil(models.Model):	
 	user=models.OneToOneField(User,unique=True)
-	pais=models.CharField(max_length="30", null=False)
+	#pais=models.CharField(max_length="30", null=False)
 	avatar=ImageWithThumbsField(upload_to="img_user",sizes=((50,50),(200,200)))
-
+	puntaje_total=models.PositiveIntegerField(default=0)
+ 	partidas_jugadas=models.PositiveIntegerField(default=0)
 
 class Tema(models.Model):
 	nombre=models.CharField(max_length=20,unique=True)

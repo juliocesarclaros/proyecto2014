@@ -1,7 +1,7 @@
 {% extends 'base1.html' %}
 {% block container %}
 <center><h3><font face="rockwell" size=5px>Formulario de Registro de Usuario</font></h3><br>
-			<form action="" method="post" enctype='multipart/form-data' class="" style="color: blue;">
+			<form action="" method="post" enctype='multipart/form-data' class="" style="color: black;">
 				{% csrf_token %}
 				{% for datos in formulario %}
 					{{datos.errors}}

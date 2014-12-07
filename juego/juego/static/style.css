@@ -5,7 +5,7 @@
 
 body {
 	color: #fff;
-	background-color: #c80400;
+	background-color: #000000;
 	font-family: verdana, arial, sans-serif;
 	font-size: 10px;
 	line-height: 15px;
@@ -74,7 +74,7 @@ input {
 /* Page Header */
 
 #page_header {
-	background: url('images/header_bg.jpg') no-repeat 0% 0%;
+	background: url('images/warcraft4.jpg') no-repeat 0% 0%;
 	width: 775px;
 	height: 193px;
 }
@@ -314,35 +314,35 @@ li#mainnav_11 a {
 }
 
 li#roster_twitch {
-	background-image: url('images/teamroster_tb01.jpg');
+	background-image: url('images/');
 }
 
 li#roster_rock {
-	background-image: url('images/teamroster_tb02.jpg');
+	background-image: url('images/');
 }
 
 li#roster_badkarma {
-	background-image: url('images/teamroster_tb03.jpg');
+	background-image: url('images/');
 }
 
 li#roster_mostly {
-	background-image: url('images/teamroster_tb04.jpg');
+	background-image: url('images/');
 }
 
 li#roster_thebowl {
-	background-image: url('images/teamroster_tb05.jpg');
+	background-image: url('images/');
 }
 
 li#roster_doggerz {
-	background-image: url('images/teamroster_tb06.jpg');
+	background-image: url('images/');
 }
 
 li#roster_drew {
-	background-image: url('images/teamroster_tb07.jpg');
+	background-image: url('images/');
 }
 
 li#roster_nogusta {
-	background-image: url('images/teamroster_tb08.jpg');
+	background-image: url('images/');
 }
 
 #teamroster .more_button {
