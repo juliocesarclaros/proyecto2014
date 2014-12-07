@@ -48,8 +48,12 @@
 					 	    
 					          	<ul class="nav"> 
 					          		{% if user.is_authenticated %}
-									   <li><a href="/logout/">LogOut {{user}}</a></li>
-									   <li class="#active"><a href="/chat/">Chat</a></li>
+					          		 <li class="#active"><a href="/">Inicio</a></li>
+					          		  <li><a href="lista">Lista de Usuarios</a></ li>
+									  
+									  <li><a href="/logout/">LogOut {{user}}</a></li>
+									  <li class="#active"><a href="/chat/">Chat</a></li>
+
 									{% else %}
 										<li><a href="/login/"></a></li>
 									{% endif %}

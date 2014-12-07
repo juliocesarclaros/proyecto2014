@@ -226,8 +226,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
-  color:#003300;/*para cambiar el color de las letras */
-  background-color: #CC0033;
+  color:#000000;/*para cambiar el color de las letras */
+  background-color: #000000;
   /*background: url(glyphicons-halflings-white.png);*/
 }
 
