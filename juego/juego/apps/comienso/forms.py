@@ -6,8 +6,11 @@ import pdb
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from captcha.fields import ReCaptchaField
-#empleado,cliente,clienteEmpresa,tipoAbitacion,habitacion
-
+from django.forms.extras.widgets import *
+tipos=(('public','Publico'),('private','Privado'))
+cant_preguntas=(('10','10'),('20','20'),('30','30'),('40','40'),('50','50'))
+tiempo=(('10 segundos','10 segundos'),('15 segundos','15 segundos'),('20 segundos','20 segundos'),('25 segundos','25 segundos'),('30 segundos','30 segundos'),('35 segundos','35 segundos'),('40 segundos','40 segundos'),('45 segundos','45 segundos'),('50 segundos','50 segundos'),('55 segundos','55 segundos'),('60 segundos','60 segundos'))
+categoria=Tema.objects.all()
 
 class fcapcha(forms.Form):
 	captcha = ReCaptchaField(attrs={'theme' : 'clean'})
@@ -62,3 +65,10 @@ class frespuesta(ModelForm):
 	class Meta:
 		model=Respuesta
 		exclude=['pregunta']
+
+class fpartida(ModelForm):
+	tipo_partida=forms.ChoiceField(widget=forms.RadioSelect,choices=tipos)
+	categorias=forms.ModelMultipleChoiceField(queryset=Tema.objects.all(),widget=forms.CheckboxSelectMultiple()) 
+	class Meta:
+		model=partida
+		exclude=["usuario"]

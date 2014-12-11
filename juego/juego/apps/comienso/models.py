@@ -39,3 +39,18 @@ class Respuesta(models.Model):
 	pregunta=models.ForeignKey(Pregunta)
 	def __str__(self):
 		return self.pregunta
+
+
+class partida(models.Model):
+	tipos=(('public','Publico'),('private','Privado'))
+	cant_preguntas=(('10','10'),('20','20'),('30','30'),('40','40'),('50','50'))
+	tiempo=(('10','10'),('15','15'),('20','20'),('25','25'),('30','30'),('35','35'),('40','40'),('45','45'),('50','50'),('55','55'),('60','60'))
+	titulo=models.CharField(max_length=200)
+	jugadores=models.PositiveIntegerField()
+	tipo_partida=models.CharField(max_length=200,choices=tipos)
+	preguntas=models.CharField(max_length=5, choices=cant_preguntas)
+	tiempo_respuesta=models.CharField(max_length=5,choices=tiempo)
+	categorias=models.ManyToManyField(Tema, blank=False)
+	usuario=models.ForeignKey(User)
+	def __unicode__(self):
+		return self.titulo

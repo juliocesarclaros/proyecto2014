@@ -33,7 +33,7 @@ urlpatterns = patterns('',
     #================================
 
     url(r'^chat/$',chat, name='coneccion'),
-
+    url(r'^crearpartida/$',crear_partida),
 
 
 )

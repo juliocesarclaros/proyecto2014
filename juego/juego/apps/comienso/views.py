@@ -153,18 +153,22 @@ def modificar_pass(request):
 	user=User.objects.get(username=request.user)
 	perfil=Perfil.objects.get(user=user)
 	if request.method=="POST":
-		
+		#formulario=AuthenticationForm(request.POST)
 		formulario2=feditar_pass(request.POST)
-		if  formulario2.is_valid():
-			contrasena=request.POST['password']
-			user.set_password(contrasena)
-			user.save()
-			
+		if  formulario2.is_valid(): #and formulario2.is_valid:
+			# Nick=request.POST["username"]
+			# password=request.POST["password"]
+			# acceso=authenticate(username=Nick,password=password)
+			# if acceso is not None:
+				contrasena=request.POST['password']
+				user.set_password(contrasena)
+				user.save()
+					
 		return HttpResponseRedirect("/ingresar/")
 	else:
-		
+		formulario=AuthenticationForm()
 		formulario2=feditar_pass(initial={'contrasena':user.set_password})
-	return render_to_response("usuario/editar_perfil.html",{'formulario2':formulario2},context_instance=RequestContext(request))
+	return render_to_response("usuario/editar_perfil.html",{'formulario':formulario,'formulario2':formulario2},context_instance=RequestContext(request))
 
 def ver_perfil(request,id):
 	usuario=User.objects.get(id=int(id))
@@ -173,6 +177,7 @@ def ver_perfil(request,id):
 
 
 def registro_tema(request):
+	menu=permisos(request)
 	usuario=request.user
 	if(not usuario.has_perm("comienso.add_tema")):
 		return HttpResponseRedirect("/error/permit");
@@ -192,6 +197,7 @@ def registro_tema(request):
 
 
 def add_pregunta(request,id):
+	menu=permisos(request)
 	usuario=request.user
 	if(not usuario.has_perm("comienso.add_pregunta")):
 		return HttpResponseRedirect("/error/permit");
@@ -219,6 +225,7 @@ def add_pregunta(request,id):
 	return render_to_response("usuario/registro_preguntas.html",datos,context_instance=RequestContext(request))
 
 def ver_preguntas(request,id):
+	menu=permisos(request)
 	usuario=request.user
 	if(not usuario.has_perm("comienso.change_pregunta")):
 		return HttpResponseRedirect("/error/permit");
@@ -228,6 +235,7 @@ def ver_preguntas(request,id):
 	return render_to_response("usuario/ver_preguntas.html",datos,context_instance=RequestContext(request))
 
 def edit_pregunta(request,id):
+	menu=permisos(request)
 	usuario=request.user
 	if(not usuario.has_perm("comienso.change_pregunta")):
 		return HttpResponseRedirect("/error/permit");
@@ -251,6 +259,7 @@ def edit_pregunta(request,id):
 	return render_to_response("usuario/registro_preguntas.html",datos,context_instance=RequestContext(request))
 
 def eliminar_pregunta(request,id):
+	menu=permisos(request)
 	usuario=request.user
 	if(not usuario.has_perm("comienso.delete_pregunta")):
 		return HttpResponseRedirect("/error/permit");
@@ -261,31 +270,36 @@ def eliminar_pregunta(request,id):
 	respuesta.delete()
 	return HttpResponseRedirect("/tema/edit/"+str(id)+"/")
 
-
-
-
-
-
-
-#def agregar(request):	
-	#return render_to_response ('base.html',RequestContext(request))
-#	return render_to_response("usuario/sesion.html",RequestContext(request))
-
 def permisos(request):
 	listadepermisos=[]
 	usuario=request.user
-	if usuario.has_perm("preguntas.add_categorias"):
-		listadepermisos.append({"url":"/preguntas/crearcategorias/","label":"agregar categorias"})
-	if usuario.has_perm("preguntas.add_mpregunta"):
-		listadepermisos.append({"url":"/preguntas/crearpreguntas/","label":"agregar preguntas"})
-	if usuario.has_perm("preguntas.mostrar_preguntas"):
-		listadepermisos.append({"url":"/preguntas/verpreguntas/","label":"ver preguntas"})
-	if usuario.has_perm("preguntas.ver_categoria"):
-		listadepermisos.append({"url":"/preguntas/vercategorias/","label":"ver categorias"})
+	if usuario.has_perm("comienso.add_tema"):
+		listadepermisos.append({"url":"/tema/","label":"registrar temas "})
+	if usuario.has_perm("comienso.add_pregunta"):
+		listadepermisos.append({"url":"/tema/add/","label":"agregar pregun"})
+	if usuario.has_perm("comienso.change_pregunta"):
+		listadepermisos.append({"url":"/tema/edit/","label":"edit preguntas"})
+	if usuario.has_perm("comienso.delete_pregunta"):
+		listadepermisos.append({"url":"/tema/edit/","label":"eliminar pregunta"})
 	return listadepermisos
 
 
 def chat(request):
 	idsession=request.session["idkey"]
 	return HttpResponseRedirect("http://localhost:3000/django/"+idsession)
-	#return HttpResponseRedirect("http://localhost:3000/django/")
+	
+
+def crear_partida(request):
+	if (request.method=="POST"):
+		usuario=User.objects.get(username=request.user)
+		form=fpartida(request.POST)
+		
+		if(form.is_valid()):
+			obj=form.save(commit=False)
+			obj.usuario=usuario
+			obj.save()
+			form.save_m2m()
+			return HttpResponseRedirect("/ingresar/")
+	else:
+		form=fpartida()
+	return render_to_response("usuario/crearpartida.html",{"form":form},RequestContext(request))
